@@ -24,13 +24,17 @@ public class FIB {
       fib(number);
     }
     public static void fib(int number){
-        int[] fArray=new int[number];
-        fArray[0]=1;
-        if (number>1){
-            fArray[1]=1;
-            for(int i=2;i<fArray.length;i++){
-                fArray[i]=fArray[i-1]+fArray[i-2];
-            }
+        int[] fArray=new int[number+1];
+      
+        for(int i=0;i<fArray.length;i++){
+            if (i<=1){
+                  fArray[i]=i;
+                    
+             }
+              else{
+                
+                    fArray[i]=fArray[i-1]+fArray[i-2];  
+              }
         }
           int sum=0;
          for(int value:fArray){

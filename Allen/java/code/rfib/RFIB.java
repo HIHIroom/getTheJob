@@ -23,15 +23,15 @@ public class RFIB {
              System.out.println("請輸入費氏陣列項數:");
             Scanner scanner = new Scanner(System.in);
              int number=scanner.nextInt();
-             int[] fArray=new int[number];
+             int[] fArray=new int[number+1];
              for(int i=0;i<fArray.length;i++){
-                 fArray[i]=fib(i+1);
+                 fArray[i]=fib(i);
                   System.out.print( fArray[i]+",");
              }  
     }
     public static int fib(int n){
-        if(n==1 || n==2)
-            return 1;
+        if(n==0 || n==1)
+            return n;
        
         else
           return fib(n-1)+fib(n-2);
