@@ -1,5 +1,5 @@
 package worldbehavior;
-public abstract class Human{
+public  abstract class Human implements normalBehaviour{
     private String name;
     private int age;
     private String job;
@@ -21,7 +21,13 @@ public abstract class Human{
     public void setJob(String job){
         this.job=job;
     }
-    public abstract void playPC();
+    public  void playPC(){
+           System.out.println(this.getName()+"雖然職業是:"+this.getJob()+",但還是會打電腦");
+    }
+     public  void eat(){
+           System.out.println(this.getName()+"用筷子吃飯");
+    }
+     public abstract void Skill();
       
        
     
