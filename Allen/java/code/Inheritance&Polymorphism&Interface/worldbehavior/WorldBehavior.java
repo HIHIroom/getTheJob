@@ -25,36 +25,29 @@ public class WorldBehavior {
         actor.setName("allen");
          actor.setJob("演員");
         actor.setAge(21);
-         showbehavior(singer);
-         showbehavior(actor);
-        Human a=singer;
-        a.Skill();
-        a=actor;
-        a.Skill();
+         showSkill(singer);
+         showSkill(actor);
         System.out.println("以上為人類職業行為---------------");
+        //建立dog,cat,ghost物件
          dog dog1=new dog();
          dog1.setKind("鬥牛犬");
          cat cat1=new cat();
          cat1.setKind("斑點貓");
          Ghost ghost1=new Ghost();
          ghost1.setName("鬼");
-         //介面多型
-         normalBehaviour nBehavior=singer;
-         nBehavior.eat();
-         nBehavior=actor;
-         nBehavior.eat(); 
-          nBehavior= dog1;
-         nBehavior.eat();
-           nBehavior= cat1;
-           nBehavior.eat();
-             nBehavior= ghost1;
-           nBehavior.eat();
          
+         //介面多型
+         normalBehaviour [] nbs={singer,actor,dog1,cat1,ghost1};
+         shownBeavior(nbs);
          System.out.println("以上為世界正常行為----------------");
     }
-     public static void showbehavior(Human human){
-         human.playPC(); 
+     public static void showSkill(Human human){
+         human.Skill(); 
     }
-      
+      public static void shownBeavior( normalBehaviour[] nb){
+         for(int i=0;i<nb.length;i++){
+             nb[i].eat();
+         }
+    }
      
 }
