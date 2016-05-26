@@ -13,7 +13,7 @@
 
 <?php
 if ($_FILES["fileUpload"]["error"]==0){
-	if(move_uploaded_file($_FILES["fileUpload"]["tmp_name"],"./".$_FILES["fileUpload"]["name"])){
+	if(move_uploaded_file($_FILES["fileUpload"]["tmp_name"],iconv("UTF-8", "big5","./".$_FILES["fileUpload"]["name"]))){
 		echo "上傳成功";
 		echo "檔案名稱:".$_FILES["fileUpload"]["name"]."<br/>";
 		echo "檔案類型:".$_FILES["fileUpload"]["type"]."<br/>";
